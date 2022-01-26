@@ -29,5 +29,10 @@ defmodule Account do
     end
   end
 
+  def deposit(account, value) do
+    account = %Account{account | balance: account.balance + value}
+    {:ok, account, "Successfuly deposited $ #{value}"}
+  end
+
   defp balance_check(balance, value), do: balance < value
 end
